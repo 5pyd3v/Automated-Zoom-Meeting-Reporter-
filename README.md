@@ -265,7 +265,7 @@ npm run dist
 Download Zoom Transcript
             │
             ▼
-Upload .vtt File(s)
+Upload .txt File(s)
             │
             ▼
 Choose Ending Time
