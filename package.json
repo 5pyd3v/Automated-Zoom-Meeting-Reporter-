@@ -1,0 +1,47 @@
+{
+  "name": "zoom-meeting-reporter",
+  "productName": "Zoom Meeting Reporter",
+  "version": "1.0.0",
+  "description": "Desktop application that automatically generates professional Word meeting reports from Zoom VTT transcript files using Google Gemini.",
+  "main": "src/main.js",
+  "type": "module",
+  "author": "Zoom Meeting Reporter",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "com.zoommeetingreporter.app",
+    "productName": "Zoom Meeting Reporter",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "docx": "^9.7.1",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  }
+}
